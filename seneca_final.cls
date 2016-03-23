@@ -1,8 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{seneca_final}[2016/03/20 Provides a class for a Seneca Final template]
 
-\LoadClass[12pt]{article}
+\LoadClass[letterpaper,12pt]{article}
 \RequirePackage{fancyhdr}
+\textwidth=480pt \oddsidemargin=-13pt \textheight=632pt \topmargin = -20pt
+
 \RequirePackage{lastpage} %allows use of \pageref{LastPage}
 \RequirePackage{mathptmx} %switch font-family to Times New Roman
 
@@ -84,7 +86,7 @@
       \end{itemize}
    }
 
-
+\usepackage{forloop}
 \newcommand{\Lines}[2] {
    \newcounter{loop}
    \forloop{loop}{0}{\value{loop}<#1}{\hrule \vspace{#2}}
