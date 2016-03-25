@@ -1,0 +1,64 @@
+Readme file for the seneca_final.cls class
+Author: Marcel Jar
+Date: March 23rd 2016
+Version 0.1
+
+The seneca_final class allows Seneca instructors to write their final exam using Latex, following the same template provided by MS Word.
+
+To use it, you simply need to keep the cls file in the same folder as your .tex file and set the document class as: \documentclass{seneca_final}
+
+How to use it:
+
+Headers and footers are created using the commands:
+
+\CourseTerm{<course code> Final Exam}{<term>}
+\CollegeDept{<college name>}{<department>}
+
+The cover page is by large automatically generated. The number of pages is automatically calculated. Also, the total number of marks is calcualted as the sum of the marks for all its parts. The sequence of commands to create the title page is shown below. Attention, you need to keep all these commands in your exam!
+
+\AddTitle{<version (leave it empty if only one version is required)>}
+\AddCourseInfo{<term>}{<course name>}{<course code>}
+\AddStudentInfo
+\AddTestInfo{<date>}{<instructor names>}{<first part name>}{<marks for part 1>}{<second part name>}{<marks for part 2>} {<third part name>}{<marks for part 3>}
+\begin{SpecialInstructions}
+   \item <insert your first instruction here>
+   \item <insert your second instruction here>
+\end{SpecialInstructions}
+
+You can divide your exam in parts using:
+\Part{<name of the part>}
+
+Questions are created with:
+\Question{<question text>}
+
+Four types of questions are possible, regular questions, created using simply the command \Question above, multiple choice questions, true or false questions, and column matching questions. There are no limits for the number of choices for the last three types of questions.
+
+Multiple choice questions:
+
+\Question{<question text>}
+   \begin{multiple_choice}
+      \item <first multiple choice item>
+      \item <second multiple choice item>
+   \end{multiple_choice}
+
+True or False questions:
+
+\Question{<question text>}
+   \begin{true_false}
+      \item <first true or false item>
+      \item <second true or false item>
+   \end{true_false}
+
+Column matching questions:
+
+\Question{<question text>}
+   \begin{match_columns}
+      <first item> & <first match>\\
+      <second item> & <second match>\\
+      <third item> & <third match>\\
+   \end{match_columns}
+
+You can also create subquestions with the command:
+\Question{<question text>}
+   \Subquestion{<subquestion 1 text>}
+   \Subquestion{<subquestion 2 text>}

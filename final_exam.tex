@@ -1,140 +1,102 @@
 \documentclass{seneca_final}
-\usepackage{blindtext}
 
-\usepackage{array}
-\newcolumntype{R}{>{\raggedleft\arraybackslash}b{4cm}}
-%\usepackage[left=1.25in, right=1.25in, top=1.25in, bottom=1.5in]{geometry} %Sets
+% set up header and footers ---------------------------------------
+
 %Write the name of your class and the term below
-%Make sure to keep the double curly braces
-\CourseTerm{{OPS105 Final Exam}}{{Winter 2016}}
-\CollegeDept{{Seneca College}}{{School of ICT}}
-
+\CourseTerm{OPS105 Final Exam}{Winter 2016}
+%Write the name of your class and the term below
+\CollegeDept{Seneca College}{School of ICT}
+% -----------------------------------------------------------------
 
 \begin{document}
 
-\thispagestyle{empty}
-\begin{center}
-\noindent
-\MakeUppercase{\textbf{Seneca College of Arts and Technology}}
-\vspace{0.5cm}
+   % title page ---------------------------------------------------
 
-\noindent
-\MakeUppercase{\textbf{School of Information and Communication Technology - SY}}
-\vspace{0.5cm}
+   %you can ommit the version from the title if the exam has only one version
+   \AddTitle{Version A}
+   %add the term, name, and code for the course
+   \AddCourseInfo{Winter 2016}{Operating Systems: Practices}{OPS105}
+   %space for students to add their info
+   \AddStudentInfo
+   %add date, professor name, and parts followed by marks per part. Up to three parts are possible.
+   \AddTestInfo{Monday, April 18, 2015}{Marcel Jar}{multiple choice}{10}{short answer}{10}{long answer}{10}
+   %enter special instructions
+   \begin{SpecialInstructions}
+      \item This is a closed book exam. No reference sheets or aids material of any are allowed.
+      \item Write your answers in the spaces provided
+   \end{SpecialInstructions}
 
-\noindent
-\MakeUppercase{\textbf{Final Examination - Version A}}
-\vspace{0.5cm}
-\end{center}
-
-%\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{ p{3.5cm} p{7.0cm} R }
- \MakeUppercase{SEMESTER} & \MakeUppercase{SUBJECT NAME}  & \MakeUppercase{SUBJECT CODE} \\ \hline
-  & & \\
-  Winter 2016 & Operating Systems: Practices & OPS105 \\ \hline
-\end{tabular}
-\vspace{0.5cm}
-
-\begin{center}
-\MakeUppercase{name:}\underline{\hspace{8.5cm}} \\
-\vspace{0.25cm}
-\MakeUppercase{student number:}\underline{\hspace{6cm}}\\
-\vspace{0.25cm}
-\MakeUppercase{section:}\underline{\hspace{8.2cm}}
-\vspace{0.5cm}
-\end{center}
-
-
-\begin{tabular}{ p{3.5cm} p{7.0cm} p{0.5cm} p{1.5cm}}
-\MakeUppercase{date:} & Monday, April 18, 2015  & & \\
-  & & & \\
-\MakeUppercase{time allowed:} & 2 hours& & \\
-  & & & \\
-\MakeUppercase{questions:} & & & \\
-\MakeUppercase{part a} & Multiple Choice & 10 & \MakeUppercase{marks}\\
-\MakeUppercase{part b} & Multiple Choice & 10 & \MakeUppercase{marks}\\
-\MakeUppercase{part c} & Multiple Choice & 10 & \MakeUppercase{marks}\\
-\MakeUppercase{} & & & \\
-& \MakeUppercase{total marks:} & 30 &\\
-& & & \\
-\MakeUppercase{Professor(s):} & Marcel Jar & & \\
-\MakeUppercase{} & & & \\
-\MakeUppercase{} & & & \\
-\end{tabular}
-
-\noindent
-\textbf{\underline{\MakeUppercase{special instructions:}}}
-
-\begin{enumerate}
-   \item This is a closed book exam. No reference sheets or aids material of any are allowed.
-   \item Write your answers in the spaces provided
-\end{enumerate}
-
-\noindent
-This exam includes a cover page, plus 7 pages of questions.
-\vspace{0.15cm}
-\hrule
-
-\vspace{0.5cm}
-\noindent
-\MakeUppercase{Seneca's academic honesty policy:}
-
-\noindent
-As a Seneca student, you must conduct yourself in an honest and trustworthy manner in all aspects of your academic career. A dishonest attempt to obtain an academic advantage is considered an offense, and will not be tolerated by the College.
-
-\vspace{0.5cm}
-\noindent
-\MakeUppercase{Approved by:}
-
-\noindent
-Mary Lynn Manton, Chair, School of ICT
-
-\newpage
+   %---------------------------------------------------------------
 
    \Part{Multiple Choice}
 
-   \Question{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+   \Question{How many people live in Canada?}
    \begin{multiple_choice}
-      \item Again I will write a lot jsut to guarantee that we will haev more than jsut one line of text.
-      \item test2
-      \item test2
-      \item test2
-      \item test2
+      \item Over 50 million
+      \item Around 35 million
+      \item A bit less than 20 million
+      \item A few thousand penguins
+      \item A few americans trying to escape military service
    \end{multiple_choice}
 
-   \Question{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+   \Question{Ho, hum, another batch of instructions. But this time we will make them a little shorter, because we assume that students realize what they should do.}
    \begin{true_false}
-      \item Again I will write a lot jsut to guarantee that we will haev more than jsut one line of text.
-      \item test2
-      \item test2
-      \item test2
-      \item test2
+      \item ‘Roger \& Me’ chronicles one man’s attempt to get into Disneyland so that he can visit Toontown.
+      \item Laden swallows fly faster than unladen swallows, unless they carry coconuts.
+      \item All animals are created equal, but some animals are more equal than others.
+      \item ‘Monty Python and the Holy Grail’ is a very funny movie.
+      \item This sentence is not false.
    \end{true_false}
 
    \Question{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
-   \Subquestion{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
-   \Subquestion{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+      \Subquestion{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+      \Subquestion{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
 
+   \Question{Match the bands below with their most famous albums.}
+   \begin{match_columns}
+      Nirvana & Sargent Peppers Lonely Hearts Club Band\\
+      Pink Floyd & Nevermind\\
+      Beatles & (What's the Story) Morning Glory?\\
+      Oasis & The Dark Side of the Moon\\
+   \end{match_columns}
+
+   \newpage
+
+   \Part{Short Answer}
+
+      \Question{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+         \Subquestion{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+         \Lines{2}{1cm}
+
+         \Subquestion{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+         \Lines{2}{1cm}
+
+      \Question{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+         \Subquestion{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+         \Lines{2}{1cm}
+
+         \Subquestion{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+         \Lines{2}{1cm}
+
+         \Subquestion{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+         \Lines{2}{1cm}
+
+   \newpage
+
+\Part{Short Answer}
 
    \Question{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
-   \begin{match_a}
-      \item Again I will write a lot jsut to guarantee that we will haev more than jsut one line of text.
-      \item test2
-      \item test2
-      \item test2
-      \item test2
-   \end{match_a}
-   \begin{match_b}
-      \item Again I will write a lot jsut to guarantee that we will haev more than jsut one line of text.
-      \item test2
-      \item test2
-      \item test2
-      \item test2
-   \end{match_b}
+   \Lines{6}{1cm}
 
+   \Question{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+   \Lines{6}{1cm}
 
-\Lines{4}{1cm}
+   \Question{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+   \Lines{6}{1cm}
 
-   \blinddocument
+   \Question{Here goes some random text that should be part of the question. I will keep on writing for a while just to ensure that we have multiple lines.}
+   \Lines{6}{1cm}
+
+   \newpage
 
 \end{document}
