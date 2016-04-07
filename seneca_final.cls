@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{seneca_final}[2016/03/20 Provides a class for a Seneca Final template]
+\ProvidesClass{seneca_final}[2016/04/05 Provides a class for a Seneca Final template]
 
 \LoadClass[letterpaper,12pt]{article}
 \RequirePackage{fancyhdr}%allows us to create fancy headers, footers, and resize pages
@@ -145,6 +145,7 @@
 
 
 %these commands will make section, subsection, and subsubsections to have the desired format
+
 \usepackage{titlesec}
 \titleformat{\section}{\normalfont}{\thesection}{0.5em}{}
 \renewcommand{\thesection}{\textbf{PART \Alph{section}}}
@@ -152,11 +153,16 @@
 
 \titleformat{\subsection}{\normalfont}{\thesubsection}{0.5em}{}
 \renewcommand{\thesubsection}{\arabic{subsection}.}
-\newcommand{\Question}[1] {\subsection{#1}}
 
+\usepackage{xifthen} % allows use of \ifthenelse for optional arguments
+\newcommand{\Question}[2][]{
+   \ifthenelse{\equal{#1}{}}{\subsection{#2}}{\subsection{#2 \textbf{[#1 marks]}}}
+}
 \titleformat{\subsubsection}{\normalfont \leftskip 14pt}{\thesubsubsection}{1em}{}
 \renewcommand{\thesubsubsection}{\alph{subsubsection})}
-\newcommand{\Subquestion}[1] {\subsubsection{#1}}
+\newcommand{\Subquestion}[2][]{
+   \ifthenelse{\equal{#1}{}}{\subsubsection{#2}}{\subsubsection{#2 \textbf{[#1~marks]}}}
+}
 % end of section, subsection, and subsubsection commands ----------------------
 
 
