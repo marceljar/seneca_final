@@ -29,13 +29,15 @@ You can divide your exam in parts using:
 \Part{<name of the part>}
 
 Questions are created with:
-\Question{<question text>}
+\Question[marks]{<question text>}
+
+The parameter [marks] is optional. If present, it writes in boldface how many marks are allocated to that question. For example, \Question[1.0]{Question title} would print: 1. Question title [1.0 marks].
 
 Four types of questions are possible, regular questions, created using simply the command \Question above, multiple choice questions, true or false questions, and column matching questions. There are no limits for the number of choices for the last three types of questions.
 
 Multiple choice questions:
 
-\Question{<question text>}
+\Question[marks]{<question text>}
    \begin{multiple_choice}
       \item <first multiple choice item>
       \item <second multiple choice item>
@@ -43,7 +45,7 @@ Multiple choice questions:
 
 True or False questions:
 
-\Question{<question text>}
+\Question[marks]{<question text>}
    \begin{true_false}
       \item <first true or false item>
       \item <second true or false item>
@@ -51,7 +53,7 @@ True or False questions:
 
 Column matching questions:
 
-\Question{<question text>}
+\Question[marks]{<question text>}
    \begin{match_columns}
       <first item> & <first match>\\
       <second item> & <second match>\\
@@ -59,6 +61,17 @@ Column matching questions:
    \end{match_columns}
 
 You can also create subquestions with the command:
-\Question{<question text>}
-   \Subquestion{<subquestion 1 text>}
-   \Subquestion{<subquestion 2 text>}
+\Question[marks]{<question text>}
+   \Subquestion[marks]{<subquestion 1 text>}
+   \Subquestion[marks]{<subquestion 2 text>}
+
+To add source codes listings, the environment source_code is provided. This environment can provide syntax highliting, as long as the language is provided as an option. C++, Java, Python, PHP, and Bash are some of the available languages:
+
+\begin{source_code}[<language>]
+<source code goes here>
+\end{source_code}
+
+You can add jpg, png, and pdf figures to your exam using the command:
+\figure[<size>]{<filename>}
+
+There are three options of sizes: small, default, and large. <filename> must be the name of the figure file, including the file ending (png, pdf, or jpg). Note that the file must be in the same folder of the main .tex file. In case the figure resides in a subfolder in the main .tex file's folder, you can still add it by providing the relative path. For example: subfolder/filename (Linux) or subfolder\filename (Windows).

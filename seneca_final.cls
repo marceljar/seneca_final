@@ -240,3 +240,23 @@
 \lstnewenvironment{source_code}[1][C++]
 {\hfill\lstset{style=mystyle, language=#1}\minipage{0.9\textwidth}}
 {\endminipage\hfill\null}
+
+
+%This part allows us to simply add png, jpg, and pdf figures
+\usepackage[pdftex]{graphicx}
+\renewcommand{\figure}[2][]
+{
+   \begin{figure*}[!htbp]
+      \centering
+      \ifthenelse{\equal{#1}{large}}{
+         \includegraphics[width=1.0\textwidth]{#2}
+      }{
+         \ifthenelse{\equal{#1}{small}}{
+            \includegraphics[width=0.5\textwidth]{#2}
+         }{
+            \includegraphics[width=0.75\textwidth]{#2}
+         }
+      }
+   \end{figure*}
+}
+% end of question types commands --------------------------------------------
