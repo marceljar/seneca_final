@@ -7,7 +7,6 @@
 \RequirePackage{calc} %this package allow us to use newcounter and setcounter
 \RequirePackage{mathptmx} %switch font-family to Times New Roman
 
-
 %these commands will create the proper header and footers
 \pagestyle{fancy}
 \fancyhf{}
@@ -205,3 +204,33 @@
    \vspace{0.5cm}
    \forloop{loop}{0}{\value{loop}<#1}{\hrule \vspace{#2}}
 }
+
+%these commands control how source code listings look like
+\RequirePackage{listings}
+\usepackage{color}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+   backgroundcolor=\color{backcolour},
+   %commentstyle=\color{codegreen},
+   %keywordstyle=\color{magenta},
+   %stringstyle=\color{codepurple},
+   numberstyle=\footnotesize\color{codegray},
+   basicstyle=\footnotesize,
+   breakatwhitespace=false,
+   breaklines=true,
+   captionpos=b,
+   keepspaces=true,
+   numbers=left,
+   numbersep=5pt,
+   showspaces=false,
+   showstringspaces=false,
+   showtabs=false,
+   tabsize=2
+}
+
+\lstnewenvironment{source_code}[1][C++]
+{\hfill\lstset{style=mystyle, language=#1}\minipage{0.9\textwidth}}
+{\endminipage\hfill\null}
